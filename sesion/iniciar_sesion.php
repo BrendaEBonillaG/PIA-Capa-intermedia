@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Redirigir al usuario a la página principal
         
-            header('Location: http://localhost/PIA_PCI 2/Dashboard.php');
+            header('Location: http://localhost/PIA-capa-intermedia/Dashboard.php');
             exit();
         
         } else {

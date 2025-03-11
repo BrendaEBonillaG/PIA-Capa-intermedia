@@ -1,0 +1,21 @@
+<?php
+session_start(); // Inicia la sesión
+
+// Depuración: Verifica el contenido de la sesión
+var_dump($_SESSION);
+
+if (!isset($_SESSION['usuario'])) {
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'Usuario no autenticado']);
+    exit;
+}
+
+include 'conexion.php'; // Incluye el archivo de conexión a la base de datos
+
+// Consulta para obtener los usuarios
+$stmt = $pdo->query('SELECT Nombre_U, imagenBase64 FROM Usuarios_P');
+$usuarios = $stmt->fetchAll();
+
+header('Content-Type: application/json');
+echo json_encode($usuarios);
+?>

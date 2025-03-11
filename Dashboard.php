@@ -1,3 +1,13 @@
+<?php
+session_start(); // Inicia la sesión
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    // Si no hay sesión, redirige al usuario a la página de inicio de sesión
+    header('Location: ../PIA-capa-intermedia/sesion/log_in2.php');
+    exit; // Detiene la ejecución del script
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,24 +30,30 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="HomeIcon" id="HomeIcon">
-            <img id="home" class="home" src="../PIA_PCI 2/img/home.png" alt="">
-        </div>
+<header id="header">
+    <div class="HomeIcon" id="HomeIcon">
+        <img id="home" class="home" src="../PIA_PCI 2/img/home.png" alt="Inicio">
+    </div>
 
-        <ul class="menu">
-            <li><h1>Chat</h1></li>
-            <li><h1>Pedidos</h1></li>
-        </ul>
+    <ul class="menu">
+        <li>
+            <h1><a href="../PIA-Capa-intermedia/Chat.php">Chat</a></h1>
+        </li>
+        <li>
+            <h1>Pedidos</h1>
+        </li>
+    </ul>
 
-        <div>
-            <img id="carrito" class="carrito" src="../PIA_PCI 2/img/carrito.png" alt="">
-            <div id="numero"></div>
-        </div>
-        <div>
-            <img id="perfil" class="perfil" src="../PIA_PCI 2/img/face.png" alt="">
-        </div>
-    </header>
+    <div>
+        <img id="carrito" class="carrito" src="../PIA_PCI 2/img/carrito.png" alt="Carrito de compras">
+        <div id="numero"></div>
+    </div>
+    
+    <div>
+        <img id="perfil" class="perfil" src="../PIA_PCI 2/img/face.png" alt="Perfil de usuario">
+    </div>
+</header>
+
 
     <aside class="filtros" id="filtros">
         <h2>Filtros</h2>
