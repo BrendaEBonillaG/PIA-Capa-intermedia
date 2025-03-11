@@ -79,10 +79,7 @@
         
           <p>Hola, ¿cómo estás?</p>
         </div>
-        <div class="message sent">
-          
-          <p>¡Hola! Todo bien, ¿y tú?</p>
-        </div>
+      
     </div>
     
     <div class="chat-footer">
@@ -115,5 +112,6 @@
 }
 </script>
 <script src="../PIA_PCI 2/JS/app.js"></script>
+<script src="JS/mensajes.js"></script>
 </body>
 </html>
