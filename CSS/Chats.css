@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical si es necesario */
+    min-height: 100vh;       /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #010F16; /* Color de fondo para más contraste */
+}
+
+/*Estilos del chat*/
+.usuarios-container {
+    display: flex;
+    height: 80vh;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-list {
+    width: 25%;
+    height: 100vh;
+    background-color: #F1DE99;
+    color: #fff;
+    padding-top: 50px; /* Ajusta según la altura del .user-header */
+    overflow-y: auto;
+    position: fixed;
+    top: 70px;
+    left: 0;
+}
+
+.user-header {
+    background-color: #1A2326;
+    color: #fff;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    align-items: center;
+    border-radius: 0;
+    position: absolute; /* Lo coloca en la parte superior de .user-list */
+    top: 0;
+    left: 0;
+}
+
+.user-header svg {
+    vertical-align: middle;  /* Alinea el SVG mejor con el texto */
+    margin-right: 6px;       /* Ajusta la distancia entre el SVG y el texto */
+    height: 28px;            /* Aumenta el tamaño del SVG */
+    width: 28px;             /* Aumenta el tamaño del SVG */
+}
+
+.user-header span {
+    color: #DA961F;
+    margin-left: 0;          /* Asegura que no haya margen extra */
+    font-size: 18px;         /* Aumenta el tamaño del texto */
+}
+
+  .user-list h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .user-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+  
+  .user-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #272F40;
+    font-size: 20px;
+    display: flex;
+  }
+  
+  .user-list li:hover,
+  .user-list li.active {
+    background-color: #DA961F;
+    font-weight: bold;
+  }
+  
+  .profile-pic-container {
+    position: relative;
+    display: inline-block;  /* Asegura que el contenedor sea un bloque en línea para el ajuste de la imagen */
+  }
+  
+  .profile-pic {
+    width: 50px;       /* Tamaño de la imagen */
+    height: 50px;
+    border-radius: 50%; /* Para que sea circular */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    object-fit: cover;  /* Para que la imagen no se deforme */
+    position: relative; /* Necesario para colocar el circulito en la esquina */
+  }
+  
+  /* Crear el círculo en la esquina inferior derecha */
+  .profile-pic::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;        /* Tamaño del círculo */
+    height: 15px;       /* Tamaño del círculo */
+    border-radius: 50%; /* Forma circular */
+    background-color: #00FFAA; /* Color del círculo (puedes cambiarlo según lo necesites) */
+    border: 2px solid #00FFAA; /* Bordecito blanco */
+  }
+  
+  .chats {
+    background-color: #010F16 !important; /* Asegura que el color de fondo se aplique correctamente */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;  /* Aumento del ancho del chat */
+    height: 600px; /* Ajuste de la altura para mantener un diseño equilibrado */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    background-color: #010F16 !important; /* Asegura que el color de fondo se aplique correctamente */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Elimina la sombra si no la quieres */
+    height: calc(100vh - 60px); /* Resta el espacio superior */
+    width: calc(100% - 25%); /* Resta el ancho de .user-list */
+    position: fixed;
+    top: 70px; /* Espacio superior */
+    left: 25%; /* Inicia después de .user-list */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  background-color: #1A2326;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.profile-pic {
+  width: 40px; /* Tamaño de la imagen */
+  height: 40px;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Evita distorsión */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column; /* Apila el nombre y el estado */
+  align-items: flex-start; /* Alinea a la izquierda */
+}
+    .chat-header h2 {
+      font-size: 20px; /* Tamaño de fuente ligeramente mayor */
+    }
+    
+    .chat-header .user {
+      font-size: 18px;
+      font-weight: bold;
+      color: #DA961F; 
+  }
+  
+  .chat-header .Estado {
+      font-size: 14px;
+      color: #8F8F8F; /* Color para el estado */
+      margin-top: 2px; /* Espacio entre el nombre y el estado */
+  }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #252839;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .message {
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 10px;
+      max-width: 80%; /* Aumento del ancho de las burbujas de texto */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .message.sent {
+      background-color: #DA961F;
+      align-self: flex-end;  /* Alinea los mensajes enviados a la derecha */
+    }
+    
+    .message.received {
+      background-color: #F1DE99;
+      border: 1px solid #ccc;
+      align-self: flex-start;  /* Alinea los mensajes recibidos a la izquierda */
+    }
+    
+    .chat-box p{
+      color: #1B2A41;
+    }
+    .user {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .chat-footer {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background-color: #1A2326;
+      border-radius: 0 0 8px 8px;
+      align-items: center;
+    }
+    
+    #message-input {
+        width: 70%;
+        padding: 12px;
+        margin-bottom: 15px; /* Aplica el mismo margen que el padding del footer */
+        margin-left: 120px; /* Añade un pequeño margen para moverlo a la derecha */
+        border-radius: 0; /* Elimina bordes redondeados si quieres un diseño totalmente plano */
+        background-color: #21333D;
+        border: none; /* Elimina bordes si no los quieres */
+        outline: none; /* Elimina el contorno al hacer clic */
+        box-shadow: none; /* Asegura que no haya sombras */
+    }
+    
+    .send-btn {
+      background-color: #E98D24;
+      width: 100px;
+      margin-bottom: 15px; /* Aplica el mismo margen que el padding del footer */
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 45px;
+      cursor: pointer;
+      margin-left: 50px;
+    }
+    
+    .send-btn:hover {
+      background-color: #E98D24;
+    }

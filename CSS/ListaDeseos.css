@@ -1,0 +1,170 @@
+.Wishlist {
+    width: 300px;
+    position: fixed;
+    top: 70px; /* Ajusta para que esté debajo del header */
+    left: 0;
+    background-color: #1A2326;
+    padding: 20px;
+    color: #F1DE99;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: calc(100% - 70px); /* Ajusta la altura para que no cubra todo */
+    z-index: 5; /* Asegura que el filtro esté por debajo del header */
+    overflow-y: auto; /* Permite desplazarse si el contenido es demasiado largo */
+}
+
+.Wishlist h2 {
+    font-size: 36px; /* Reduje el tamaño para un mejor ajuste */
+    margin-bottom: 20px;
+    color: #F1DE99;
+}
+
+.Wishlist label {
+    font-size: 18px; /* Reduje el tamaño para consistencia */
+    margin-bottom: 8px;
+    display: block;
+    color: #F1DE99;
+}
+
+.Wishlist select,
+.Wishlist input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: #A4BF7A;
+    border: none;
+    color: #272F40;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.Wishlist button {
+    width: 70%;
+    padding: 10px;
+    background-color: #DA961F;
+    border: none;
+    color: #272F40;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;  /* Asegura que el botón se comporte como un bloque */
+    margin: 0 auto;  /* Centra el botón horizontalmente */
+    transition: background-color 0.3s ease; /* Añade una transición suave */
+}
+
+.Wishlist button:hover {
+    background-color: #F1DE99;
+    color: #1A2326; /* Asegura que el texto cambie cuando se pase el ratón */
+}
+.modal {
+    display: none; /* Inicialmente oculta */
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    width: 500px; /* Mantener el ancho original del modal */
+    height: 500px; /* Aumentamos la altura del modal para agregar más espacio debajo del botón */
+    transform: translate(-50%, -50%); /* Ajusta el centro */
+    background-color: #1A2326; /* Fondo oscuro */
+    padding: 20px;
+    color: #F1DE99;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    border-radius: 20px; /* Bordes redondeados */
+    overflow-y: auto; /* Permite desplazamiento vertical si es necesario */
+}
+
+.modal h2 {
+    font-size: 36px; /* Tamaño del título */
+    margin-bottom: 20px;
+    color: #A4BF7A;
+}
+
+.modal label {
+    font-size: 18px; /* Tamaño de las etiquetas */
+    margin-bottom: 8px;
+    display: block;
+    color: #F1DE99;
+}
+
+.modal select,
+.modal input {
+    width: 80%; /* Reducimos el ancho de los inputs */
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: #A4BF7A;
+    border: none;
+    color: #272F40;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 11%; /* Desplazamos los inputs y el botón a la derecha */
+}
+
+/* Estilo específico para los inputs */
+
+ #DescripcionLista{
+    height: 120px;
+}
+.modal button {
+    width: 50%; /* Reducimos el ancho del botón */
+    padding: 10px;
+    background-color: #DA961F;
+    border: none;
+    color: #272F40;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    margin-left: 25%; /* Desplazamos el botón a la derecha */
+    margin-top: 90px;
+}
+
+.modal button:hover {
+    background-color: #F1DE99;
+    color: #1A2326;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 15px 0 15px; /* Reducimos espacio en la parte superior */
+    position: relative;
+}
+
+.modal .close {
+    font-size: 24px;
+    color: #F1DE99;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+    position: absolute;
+    top: 5px;
+    right: 0; /* Pegado completamente a la derecha */
+    padding: 5px; /* Ajuste para evitar que se vea mal */
+}
+
+.modal .close:hover {
+    color: #DA961F;
+    transform: scale(1.2);
+}
+
+.informacionLista {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    width: 300px;
+}
+
+#cerrarVentana {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

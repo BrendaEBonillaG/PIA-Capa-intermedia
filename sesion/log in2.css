@@ -1,0 +1,616 @@
+body{
+
+  background-color:#010F16;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+/* From Uiverse.io by Maximinodotpy */ 
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+
+  max-width: 300px;
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 80%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #e8e8e8;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
+/*form*/
+
+.form-container{
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+
+
+}
+
+/*primera columna*/
+
+.col-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 55%;
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(30px);
+    border-radius: 5% 30% 20% 5%;
+    transition: border-radius .3s;
+}
+
+/*nombre y contraseña*/ 
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 190px;
+    
+  }
+  
+  .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .form-control input:focus,
+  .form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+  }
+  
+  .form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .form-control label span {
+    display: inline-block;
+    font-size: 15px;
+    min-width: 5px;
+    color: #fff;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-control input:focus+label span,
+  .form-control input:valid+label span {
+    color: lightblue;
+    transform: translateY(-50px);
+  }
+
+    /*recuerdame*/
+  /* From Uiverse.io by vishnupprajapat */ 
+.checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .checkbox-wrapper-46 .cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .checkbox-wrapper-46 .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+    color: #fff;
+  }
+  .checkbox-wrapper-46 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098a9;
+    transition: all 0.2s ease;
+  }
+  .checkbox-wrapper-46 .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-46 .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #506eec;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+  }
+  .checkbox-wrapper-46 .cbx span:last-child {
+    padding-left: 8px;
+  }
+  .checkbox-wrapper-46 .cbx:hover span:first-child {
+    border-color: #506eec;
+  }
+  
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+    background: #506eec;
+    border-color: #506eec;
+    animation: wave-46 0.4s ease;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+  
+  @keyframes wave-46 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+
+  /*segunda columna*/
+
+  .col-2{
+    position: relative;
+    width: 45%;
+    padding: 20px;
+   
+  }
+  
+  .btn-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top:20px;
+    
+
+  }
+
+  .btn{
+    font-weight: 500;
+    padding: 5px 30px;
+    border: none;
+    border-radius:30px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .btn-1{
+    background: #21264D;
+  }
+ 
+
+  .btn:hover{
+    opacity:0.85;
+  }
+/*login form*/
+  .login-form{
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+  }
+
+  /*register form*/
+  .register-form{
+    position:absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+    opacity: 0;
+   
+  }
+  .register-form .form-title{
+    margin-left: 70px;
+  }
+
+
+
+  .form-title{
+    margin:15px 0;
+    color: #fff;
+    font-size:34px;
+    font-weight:300;
+    width: 75%;
+  }
+  .form-inputs{
+    width: 75%;
+  }
+
+  .forgot-password{
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+    margin-top: 10px;
+
+
+  }
+
+  .forgot-password a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+
+  }
+
+  .forgot-password a:hover{
+    text-decoration: underline;
+  }
+
+  .input-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: #fff;
+    background: #21264D;
+    border: none;
+    border-start-end-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .input-submit:hover{
+     gap: 15px;
+  }
+
+
+   /*boton iniciar sesion*/
+  /* From Uiverse.io by satyamchaudharydev */ 
+button {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+  }
+  
+  button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  button:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  button:hover .arrow:before {
+    right: 0;
+  }
+
+
+  /*registro form*/
+
+  /*foto de perfil*/
+/* From Uiverse.io by Yaya12085 */ 
+.custum-file-upload {
+    height: 100px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cacaca;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+  }
+  
+  .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .icon svg {
+    height: 30px;
+    fill: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .text span {
+    font-weight: 100;
+    color: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload input {
+    display: none;
+  }
+
+  /*radios*/
+
+  /* From Uiverse.io by Xtenso */ 
+.filter-switch {
+    border: 2px solid #ffc000;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 120px;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  .filter-switch input {
+    display: none;
+  }
+  .filter-switch label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 11px;
+  }
+  .filter-switch .background {
+    position: absolute;
+    width: 49%;
+    height: 38px;
+    background-color: #ffc000;
+    top: 4px;
+    left: 4px;
+    border-radius: 30px;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+
+  #option2:checked ~ .background {
+    left: 50%;
+  }
+  #option1:checked + label[for="option1"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option2:checked + label[for="option2"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option1:not(:checked) + label[for="option1"],
+  #option2:not(:checked) + label[for="option2"] {
+    color: #7d7d7d;
+  }
+/*radio rol*/
+  .filter-switch2 {
+    border: 2px solid #ffc000;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 150px;
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  .filter-switch2 input {
+    display: none;
+  }
+  .filter-switch2 label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .filter-switch2 .background {
+    position: absolute;
+    width: 49%;
+    height: 38px;
+    background-color: #ffc000;
+    top: 4px;
+    left: 4px;
+    border-radius: 30px;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  #option4:checked ~ .background {
+    left: 50%;
+  }
+  #option3:checked + label[for="option1"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option4:checked + label[for="option2"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option3:not(:checked) + label[for="option1"],
+  #option4:not(:checked) + label[for="option2"] {
+    color: #7d7d7d;
+  }
+
+  /*radio privacidad*/
+
+  /*radio rol*/
+  .filter-switch3 {
+    border: 2px solid #ffc000;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 150px;
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  .filter-switch3 input {
+    display: none;
+  }
+  .filter-switch3 label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .filter-switch3 .background {
+    position: absolute;
+    width: 49%;
+    height: 38px;
+    background-color: #ffc000;
+    top: 4px;
+    left: 4px;
+    border-radius: 30px;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  #option6:checked ~ .background {
+    left: 50%;
+  }
+  #option5:checked + label[for="option5"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option6:checked + label[for="option6"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option5:not(:checked) + label[for="option5"],
+  #option6:not(:checked) + label[for="option6"] {
+    color: #7d7d7d;
+  }
+  
+
+
+
+
