@@ -1,19 +1,19 @@
 <?php
 include 'conexion.php';
+
 // Iniciar la sesión
 session_start();
 
 // Verificar si el formulario ha sido enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recibir los datos del formulario
-    $Nombre_U =$_POST['Nombre_U'];
-    $contrasena= $_POST['contrasena'];
-    
+    $nombreUsu = $_POST['Nombre_U'];
+    $contrasena = $_POST['contrasena'];
 
     // Consultar la base de datos para obtener el usuario
-    $sql = "SELECT id, Nombre_U, contrasena FROM Usuarios_P WHERE Nombre_U = ?";
+    $sql = "SELECT id, nombreUsu, contrasena, rol FROM Usuarios WHERE nombreUsu = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("s", $Nombre_U); // "s" indica que es una cadena
+    $stmt->bind_param("s", $nombreUsu); // "s" indica que es una cadena
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -25,14 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verificar si la contraseña es correcta
         if ($contrasena === $row['contrasena']) {
             // La contraseña es correcta, iniciar sesión
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['Nombre_U'] = $row['Nombre_U'];
+            $_SESSION['id'] = $row['id']; // Guardar el ID del usuario en la sesión
+            $_SESSION['nombreUsu'] = $row['nombreUsu']; // Guardar el nombre de usuario en la sesión
+            $_SESSION['rol'] = $row['rol']; // Guardar el rol del usuario en la sesión
 
             // Redirigir al usuario a la página principal
-        
             header('Location: http://localhost/PIA-capa-intermedia/Dashboard.php');
             exit();
-        
         } else {
             // Contraseña incorrecta
             echo "Contraseña incorrecta.";

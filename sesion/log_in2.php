@@ -262,12 +262,12 @@
 
    
    
-   <div class="row-span-2 flex items-center justify-center h-center mb-8 ml-5"><div>
+   <div class="text-white row-span-2 flex items-center justify-center h-center mb-8 ml-5"><div>
         <label class="flex items-center justify-center h-center">Fecha de Nacimiento</label>
        
         <input type="date" name="fecha_Nac">
     </div></div>
-    <div class="row-span-2 col-start-3 row-start-4 flex items-center justify-center h-center mb-8"><div>  
+    <div class="text-white row-span-2 col-start-3 row-start-4 flex items-center justify-center h-center mb-8"><div>  
                                                                                     
         <label class="custum-file-upload" for="file">
         
@@ -279,48 +279,24 @@
            </div>
            <input type="file" id="file" name="imagen">
         </label></div></div>
-    <div class="row-span-2 col-start-2 row-start-4"><div class="row-span-2 col-start-2 row-start-4 flex justify-center">
+    <div class="text-white row-span-2 col-start-2 row-start-4"><div class="row-span-2 col-start-2 row-start-4 flex justify-center">
         <input type="submit" value="Enviar">
     </div></div>
 
-    
-                            
-                        
-                        
-                        
-                       
+        
                         </form>
 
-                    
-
-    
-                    
-                        
-                    
+     
                                         
                     </div>
 
-                   
-
-                    
-
                 </div>
-
-          
-
-
-          
-
-            
-                    
+   
             </div>
     </div>
                 
 
-                
-      
-
-
+            
     <script src="./log in2.js"></script>
 </body>
 </html>

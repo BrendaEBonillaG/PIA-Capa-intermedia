@@ -1,48 +1,38 @@
 <?php
 include 'conexion.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperar los datos del formulario
+    $correo = $_POST['Correo'];
+    $nombreUsu = $_POST['Nombre_U'];
+    $contrasena = $_POST['contrasena'];
+    $rol = $_POST['rol'];
+    $nombres = $_POST['Nombre_C'];
+    $apePa = $_POST['Apellido_P'];
+    $apeMa = $_POST['Apellido_M'];
+    $fechaNacim = $_POST['fecha_Nac'];
+    $sexo = $_POST['Sexo'];
+    $privacidad = $_POST['Privacidad'];
 
-// Establecer la zona horaria
-date_default_timezone_set('America/Mexico_City');
-
-// Obtener la fecha y hora actual
-$fechaHoraActual = date('Y-m-d H:i:s');
-
-// Mostrar la fecha y hora
-echo "Fecha y hora actual: " . $fechaHoraActual;
-
-
-if($_SERVER ["REQUEST_METHOD"] =="POST"){
-    $Nombre_C = $_POST['Nombre_C'];      // VARCHAR
-    $Correo = $_POST['Correo'];         // VARCHAR
-    $contrasena = $_POST['contrasena']; // VARCHAR
-    $Nombre_U = $_POST['Nombre_U'];         // VARCHAR
-    $fecha_Nac = $_POST['fecha_Nac']; // DATE
-    $rol =$_POST['rol'];
-
-    $Apellido_P = $_POST['Apellido_P'];
-    $Apellido_M = $_POST['Apellido_M'];
-    $Sexo = $_POST['Sexo'];
-    $Privacidad = $_POST['Privacidad'];
-
-  // Obtener la información de la imagen subida
-  $imagenTmp = $_FILES['imagen']['tmp_name'];
-  $imagenNombre = $_FILES['imagen']['name'];
-
-  // Obtener el contenido de la imagen y convertirlo a Base64
-  $imagenContenido = file_get_contents($imagenTmp);
-  $imagenBase64 = base64_encode($imagenContenido);
-
+    // Obtener la información de la imagen subida
+    $imagenTmp = $_FILES['imagen']['tmp_name'];
+    $imagenNombre = $_FILES['imagen']['name'];
+    $imagenContenido = file_get_contents($imagenTmp);
 
     // Preparar y ejecutar el procedimiento almacenado
-    $stmt = $conexion->prepare("CALL sp_insert_usuario(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $stmt->bind_param("sssssssssssss", $Nombre_C, $Correo,$contrasena,$Nombre_U,$fecha_Nac,$rol,$imagenBase64,$imagenNombre,$Apellido_P,$Apellido_M,$Sexo,$Privacidad,$fechaHoraActual);
+    $stmt = $conexion->prepare("CALL sp_insert_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssbsssssss", $correo, $nombreUsu, $contrasena, $rol, $imagenContenido, $imagenNombre, $nombres, $apePa, $apeMa, $fechaNacim, $sexo, $privacidad);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        echo "Registro exitoso.";
-        
-        header('Location: http://localhost/PIA_PCI 2/Dashboard.php');
+        // Iniciar sesión automáticamente después del registro
+        session_start(); // Iniciar la sesión
+        $_SESSION['usuario'] = $nombreUsu; // Guardar el nombre de usuario en la sesión
+        $_SESSION['correo'] = $correo; // Guardar el correo en la sesión (opcional)
+        $_SESSION['rol'] = $rol; // Guardar el rol en la sesión (opcional)
+
+        // Redirigir al dashboard
+        header('Location: http://localhost/PIA-capa-intermedia/Dashboard.php');
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -52,8 +42,4 @@ if($_SERVER ["REQUEST_METHOD"] =="POST"){
     $stmt->close();
     $conexion->close();
 }
-
-
-
 ?>
-
